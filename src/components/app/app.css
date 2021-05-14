@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightgray;
+}
+
+.headerBar{
+    background-color: #204060;
+    color: white;
+    width: 100%;
+    height: 64px;
+    padding: 0px 32px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.sideBar{
+    position: absolute;
+    padding: 20px;
+    width: 220px;
+    height: 100%;
+    background-color: grey;
+    color: white;
+}
+
+.mainsection{
+    margin-left: 265px;
+    padding: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.urlSearch{
+    width:100%;
+}
+
+textarea{
+    width: 75%;
+}
+
+label{
+    margin: 0px 10px 10px 0px;
+    padding: 10px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type=radio]:checked + label {
+    background-color: teal;
+}
+
+.results{
+    margin-top: 10px;
+    padding: 5px;
+    min-height: 500px;
+    background-color: white;
+}
