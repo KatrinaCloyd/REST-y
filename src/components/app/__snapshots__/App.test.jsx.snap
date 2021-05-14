@@ -87,6 +87,7 @@ exports[`App component renders App 1`] = `
         <br />
         <textarea
           aria-label="json"
+          class="json"
           rows="4"
           type="text"
         >
