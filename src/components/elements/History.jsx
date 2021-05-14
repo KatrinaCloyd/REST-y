@@ -3,8 +3,10 @@ import style from '../app/app.css';
 
 export default function History() {
     return (
-        <div className={style.sideBar}>
-            History Side Bar
-        </div>
+        <ul className={style.sideBar} aria-label="history">
+            <li>
+                History Side Bar
+            </li>
+        </ul>
     )
 }

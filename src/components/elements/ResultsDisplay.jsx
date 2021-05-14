@@ -1,10 +1,10 @@
 import React from 'react';
 import style from '../app/app.css';
 
-export default function ResultsDisplay() {
+export default function ResultsDisplay({ info }) {
     return (
-        <div className={style.results}>
-            Results Display Section
-        </div>
+        <section aria-label="jsonResults" className={style.results}>
+            {JSON.stringify(info)}
+        </section>
     )
 }

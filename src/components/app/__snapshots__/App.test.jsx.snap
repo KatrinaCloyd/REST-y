@@ -2,8 +2,104 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <h1>
-    Hello World
+  <h1
+    class="headerBar"
+  >
+    REST-ish
   </h1>
+  <div
+    class="page"
+  >
+    <ul
+      aria-label="history"
+      class="sideBar"
+    >
+      <li>
+        History Side Bar
+      </li>
+    </ul>
+    <div
+      class="mainsection"
+    >
+      <form>
+        <input
+          aria-label="urlInput"
+          class="urlSearch"
+          type="text"
+          value="URL"
+        />
+        <br />
+        <div>
+          <input
+            aria-label="get"
+            id="get"
+            name="CRUD"
+            type="radio"
+            value="get"
+          />
+          <label
+            for="get"
+          >
+            GET
+          </label>
+          <input
+            aria-label="post"
+            id="post"
+            name="CRUD"
+            type="radio"
+            value="post"
+          />
+          <label
+            for="post"
+          >
+            POST
+          </label>
+          <input
+            aria-label="put"
+            id="put"
+            name="CRUD"
+            type="radio"
+            value="put"
+          />
+          <label
+            for="put"
+          >
+            PUT
+          </label>
+          <input
+            aria-label="delete"
+            id="delete"
+            name="CRUD"
+            type="radio"
+            value="delete"
+          />
+          <label
+            for="delete"
+          >
+            DELETE
+          </label>
+          <button
+            aria-label="submit"
+          >
+            Go!
+          </button>
+        </div>
+        <br />
+        <textarea
+          aria-label="json"
+          rows="4"
+          type="text"
+        >
+          Raw JSON Body
+        </textarea>
+      </form>
+      <section
+        aria-label="jsonResults"
+        class="results"
+      >
+        [{"root":{"Hello":"I am bored. PLEASE make a fetch!"}}]
+      </section>
+    </div>
+  </div>
 </DocumentFragment>
 `;
