@@ -15,7 +15,24 @@ exports[`App component renders App 1`] = `
       class="sideBar"
     >
       <li>
-        History Side Bar
+        <article>
+          <p>
+            GET
+          </p>
+          <span>
+            http:blahblah.com
+          </span>
+        </article>
+      </li>
+      <li>
+        <article>
+          <p>
+            GET AGAIN
+          </p>
+          <span>
+            http:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.com
+          </span>
+        </article>
       </li>
     </ul>
     <div
@@ -26,7 +43,7 @@ exports[`App component renders App 1`] = `
           aria-label="urlInput"
           class="urlSearch"
           type="text"
-          value="URL"
+          value=" URL"
         />
         <br />
         <div>
@@ -35,7 +52,7 @@ exports[`App component renders App 1`] = `
             id="get"
             name="CRUD"
             type="radio"
-            value="get"
+            value="GET"
           />
           <label
             for="get"
@@ -47,7 +64,7 @@ exports[`App component renders App 1`] = `
             id="post"
             name="CRUD"
             type="radio"
-            value="post"
+            value="POST"
           />
           <label
             for="post"
@@ -59,7 +76,7 @@ exports[`App component renders App 1`] = `
             id="put"
             name="CRUD"
             type="radio"
-            value="put"
+            value="PUT"
           />
           <label
             for="put"
@@ -71,7 +88,7 @@ exports[`App component renders App 1`] = `
             id="delete"
             name="CRUD"
             type="radio"
-            value="delete"
+            value="DELETE"
           />
           <label
             for="delete"
@@ -91,7 +108,7 @@ exports[`App component renders App 1`] = `
           rows="4"
           type="text"
         >
-          Raw JSON Body
+           Raw JSON Body
         </textarea>
       </form>
       <section

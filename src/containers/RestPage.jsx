@@ -4,15 +4,24 @@ import HeaderEle from '../components/elements/HeaderEle';
 import History from '../components/elements/History';
 import ResultsDisplay from '../components/elements/ResultsDisplay';
 import style from '../components/app/app.css';
+import { makeDeleteCall, makeGetCall, makePutOrPostCall } from '../services/apiUtils';
 
 export default class RestPage extends Component {
 
     state = {
-        url: '',
-        route: '',
-        json: '',
+        url: ' URL',
+        route: 'GET',
+        json: ' Raw JSON Body',
         response: [{ "root": { "Hello": "I am bored. PLEASE make a fetch!" } }],
-        history: [],
+        history: [{
+            route: 'GET',
+            url: 'http:blahblah.com'
+        },
+        {
+            route: 'GET AGAIN',
+            url: 'http:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.com'
+        },
+        ],
     }
 
     handleRouteChange = (e) => {
@@ -27,9 +36,29 @@ export default class RestPage extends Component {
         this.setState({ json: e.target.value })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        //need to do all the things with state
+
+        //add call to history array in state
+        // const newHstItem = {
+        //     route: this.state.route,
+        //     url: this.state.url
+        // }
+        // this.setState({ history: this.state.history.push(newHstItem) });
+
+        //make call
+        if (this.state.route === 'GET') {
+            const response = await makeGetCall(this.state.url);
+            this.setState({ response });
+        }
+        else if (this.state.route === 'DELETE') {
+            response = await makeDeleteCall(this.state.url);
+            this.setState({ response });
+        }
+        else {
+            response = await makePutOrPostCall(this.state.url, this.state.route);
+            this.setState({ response });
+        }
     }
 
     render() {
@@ -43,6 +72,10 @@ export default class RestPage extends Component {
                             url={this.state.url}
                             route={this.state.route}
                             json={this.state.json}
+                            onRouteChange={this.handleRouteChange}
+                            onUrlChange={this.handleUrlChange}
+                            onJsonChange={this.handleJsonChange}
+                            onSubmit={this.handleSubmit}
                         />
                         <ResultsDisplay info={this.state.response} />
                     </div>
