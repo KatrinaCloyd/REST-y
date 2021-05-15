@@ -52,11 +52,11 @@ export default class RestPage extends Component {
             this.setState({ response });
         }
         else if (this.state.route === 'DELETE') {
-            response = await makeDeleteCall(this.state.url);
+            const response = await makeDeleteCall(this.state.url);
             this.setState({ response });
         }
         else {
-            response = await makePutOrPostCall(this.state.url, this.state.route);
+            const response = await makePutOrPostCall(this.state.url, this.state.json, this.state.route);
             this.setState({ response });
         }
     }
