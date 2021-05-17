@@ -94,13 +94,15 @@ exports[`App component renders App 1`] = `
         aria-label="jsonResults"
         class="results"
       >
-        [
-	{
-		"root": {
-			"Hello": "I am bored. PLEASE make a fetch!"
-		}
-	}
+        <pre>
+          [
+ {
+  "root": {
+   "Hello": "I am bored. PLEASE make a fetch!"
+  }
+ }
 ]
+        </pre>
       </section>
     </div>
   </div>
