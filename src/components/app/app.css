@@ -89,6 +89,10 @@ article{
     border-radius: 3px;
 }
 
+section{
+    overflow-wrap: break-word;
+}
+
 p{
     margin: 2px;
 }

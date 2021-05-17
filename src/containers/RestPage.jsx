@@ -9,19 +9,11 @@ import { makeDeleteCall, makeGetCall, makePutOrPostCall } from '../services/apiU
 export default class RestPage extends Component {
 
     state = {
-        url: ' URL',
+        url: '',
         route: 'GET',
-        json: ' Raw JSON Body',
+        json: '',
         response: [{ "root": { "Hello": "I am bored. PLEASE make a fetch!" } }],
-        history: [{
-            route: 'GET',
-            url: 'http:blahblah.com'
-        },
-        {
-            route: 'GET AGAIN',
-            url: 'http:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.com'
-        },
-        ],
+        history: [],
     }
 
     handleRouteChange = (e) => {
@@ -39,14 +31,14 @@ export default class RestPage extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
 
-        //add call to history array in state
-        // const newHstItem = {
-        //     route: this.state.route,
-        //     url: this.state.url
-        // }
-        // this.setState({ history: this.state.history.push(newHstItem) });
+        // add call to history array in state
+        const newHstItem = {
+            route: this.state.route,
+            url: this.state.url
+        }
+        this.state.history.push(newHstItem)
 
-        //make call
+        // make call
         if (this.state.route === 'GET') {
             const response = await makeGetCall(this.state.url);
             this.setState({ response });

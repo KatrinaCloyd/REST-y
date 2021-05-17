@@ -13,28 +13,7 @@ exports[`App component renders App 1`] = `
     <ul
       aria-label="history"
       class="sideBar"
-    >
-      <li>
-        <article>
-          <p>
-            GET
-          </p>
-          <span>
-            http:blahblah.com
-          </span>
-        </article>
-      </li>
-      <li>
-        <article>
-          <p>
-            GET AGAIN
-          </p>
-          <span>
-            http:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.comhttp:blahblah2.com
-          </span>
-        </article>
-      </li>
-    </ul>
+    />
     <div
       class="mainsection"
     >
@@ -42,8 +21,9 @@ exports[`App component renders App 1`] = `
         <input
           aria-label="urlInput"
           class="urlSearch"
+          placeholder=" URL"
           type="text"
-          value=" URL"
+          value=""
         />
         <br />
         <div>
@@ -105,17 +85,22 @@ exports[`App component renders App 1`] = `
         <textarea
           aria-label="json"
           class="json"
+          placeholder=" Raw JSON Body"
           rows="4"
           type="text"
-        >
-           Raw JSON Body
-        </textarea>
+        />
       </form>
       <section
         aria-label="jsonResults"
         class="results"
       >
-        [{"root":{"Hello":"I am bored. PLEASE make a fetch!"}}]
+        [
+	{
+		"root": {
+			"Hello": "I am bored. PLEASE make a fetch!"
+		}
+	}
+]
       </section>
     </div>
   </div>

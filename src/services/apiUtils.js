@@ -1,32 +1,37 @@
 export const makeGetCall = async (url) => {
-    const res = await fetch(url);
-    const json = await res.json();
-    return json;
+    try {
+        const res = await fetch(url);
+        const json = await res.json();
+        return json;
+    }
+    catch (err) {
+        return err.message;
+    }
 };
 
 export const makeDeleteCall = async (url) => {
-    const res = await fetch(url, { method: 'DELETE' });
-    const jsonResponse = await res.json();
-    return jsonResponse;
+    try {
+        const res = await fetch(url, { method: 'DELETE' });
+        const jsonResponse = await res.json();
+        return jsonResponse;
+    }
+    catch (err) {
+        return err.message;
+    }
 };
 
 
 export const makePutOrPostCall = async (url, json, type) => {
-    const res = await fetch(url, {
-        method: type,
-        headers: { 'Content-Type': 'application/json' },
-        body: json
-    });
-    const jsonResponse = await res.json();
-    return jsonResponse;
+    try {
+        const res = await fetch(url, {
+            method: type,
+            headers: { 'Content-Type': 'application/json' },
+            body: json
+        });
+        const jsonResponse = await res.json();
+        return jsonResponse;
+    }
+    catch (err) {
+        return err.message;
+    }
 };
-
-// URL https://rocky-refuge-35369.herokuapp.com/characters
-
-//POST WORKING BUT PUT NOT.... 
-//POST {"name":"HELLLLLOOOOOOOOO","species_id":4,"role":"sidekick","unique_power":"none","movie":"No Movie","movie_year":1951,"hand_drawn":true,"image":"https:blah.jpeg","gif":"https:blah.gif"}
-
-//PUT  takes id at end of string 
-//{"name":"BBBBBBBB", "owner_id":1, "species_id":4, "role":"villan", "unique_power":"none", "movie":"MOVIE NAME", "movie_year":2020, "hand_drawn":false, "image":"none", "gif": "none here either"}
-
-//delete by character name at end of url

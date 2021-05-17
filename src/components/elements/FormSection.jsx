@@ -3,7 +3,6 @@ import style from '../app/app.css';
 
 export default function FormSection({
     url,
-    route,
     json,
     onRouteChange,
     onUrlChange,
@@ -12,7 +11,7 @@ export default function FormSection({
 }) {
     return (
         <form onSubmit={onSubmit}>
-            <input onChange={onUrlChange} type="text" aria-label="urlInput" className={style.urlSearch} value={url} /><br />
+            <input onChange={onUrlChange} type="text" aria-label="urlInput" className={style.urlSearch} value={url} placeholder=' URL' /><br />
             <div>
                 <input type="radio" aria-label="get" name="CRUD" id="get" value="GET" onChange={onRouteChange} />
                 <label htmlFor="get">GET</label>
@@ -24,7 +23,7 @@ export default function FormSection({
                 <label htmlFor="delete">DELETE</label>
                 <button aria-label="submit">Go!</button>
             </div><br />
-            <textarea onChange={onJsonChange} type="text" aria-label="json" value={json} rows='4' className={style.json} />
+            <textarea onChange={onJsonChange} type="text" aria-label="json" value={json} rows='4' className={style.json} placeholder=' Raw JSON Body' />
         </form>
     )
 }
